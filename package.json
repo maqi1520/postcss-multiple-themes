@@ -15,7 +15,10 @@
   },
   "author": "马琪斌 <maqi1520@163.com>",
   "license": "MIT",
-  "repository": "http://github.com/maqi1520/postcss-multiple-themes",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maqi1520/postcss-multiple-themes.git"
+  },
   "publishConfig": {
     "access": "public",
     "branches": [
