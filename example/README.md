@@ -1,6 +1,6 @@
 # react-project
 
-Chat project.
+It base on https://codepen.io/TurkAysenur/pen/ZEbXoRZ?editors=0110
 
 ## Building and running on localhost
 
