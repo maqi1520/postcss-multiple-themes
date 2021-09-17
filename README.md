@@ -67,7 +67,7 @@ import "./dark-theme.less";
 .dark .box {
   border: 1px solid #999;
   background-color: #000;
-  color: @fff;
+  color: #fff;
 }
 ```
 

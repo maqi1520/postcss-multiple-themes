@@ -1,5 +1,5 @@
 function isEmpty(arr) {
-  return Array.isArray(arr) && arr.length === 0;
+  return arr === undefined || (Array.isArray(arr) && arr.length === 0);
 }
 
 const hasColorProp = (colorProps, declProp) =>
@@ -9,14 +9,7 @@ module.exports = (opts = {}) => {
   // Work with options here
 
   if (!opts.colorProps) {
-    opts.colorProps = [
-      "color",
-      "background",
-      "border",
-      "border",
-      "box-shadow",
-      "stroke",
-    ];
+    opts.colorProps = ["color", "background", "border", "box-shadow", "stroke"];
   }
 
   let theme;
@@ -25,7 +18,7 @@ module.exports = (opts = {}) => {
     const file = root.source.input.file || "";
 
     const matched = file.match(
-      /(?<theme>[a-zA-Z0-9]+)-theme.(less|css|scss|sass)/
+      /(?<theme>[a-zA-Z0-9]+)-theme.(less|css|scss|sass|styl)/
     );
     if (matched && matched.groups.theme !== "default") {
       theme = matched.groups.theme;
@@ -50,6 +43,11 @@ module.exports = (opts = {}) => {
             .split(",")
             .map((s) => `.${theme} ${s}`)
             .join(",\n");
+        }
+      });
+      root.walkAtRules((atRule) => {
+        if (isEmpty(atRule.nodes)) {
+          atRule.remove();
         }
       });
     }

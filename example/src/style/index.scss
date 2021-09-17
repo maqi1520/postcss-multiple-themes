@@ -1,0 +1,84 @@
+@import "normalize.css";
+@import url("https://fonts.googleapis.com/css?family=Manrope:300,400,500,600,700&display=swap&subset=latin-ext");
+
+// [data-theme="purple"] {
+//   $theme-color: #9f7aea;
+//   $button-color: #9f7aea;
+//   $button-bg-color: rgba(159, 122, 234, 0.12);
+// }
+// [data-theme="green"] {
+//   $theme-color: #38b2ac;
+//   $button-color: #38b2ac;
+//   $button-bg-color: rgba(56, 178, 171, 0.15);
+// }
+// [data-theme="orange"] {
+//   $theme-color: #ed8936;
+//   $button-color: #ed8936;
+//   $button-bg-color: rgba(237, 137, 54, 0.12);
+// }
+
+* {
+  outline: none;
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  background-color: $body-bg-color;
+  font-family: $body-font;
+  color: $body-color;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  background-color: $theme-bg-color;
+  max-width: 1600px;
+  height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.conversation-area,
+.detail-area {
+  width: 340px;
+  flex-shrink: 0;
+}
+
+.chat-area {
+  flex-grow: 1;
+}
+
+@media (max-width: 1120px) {
+  .detail-area {
+    display: none;
+  }
+}
+
+@media (max-width: 780px) {
+  .conversation-area {
+    display: none;
+  }
+  .search-bar {
+    margin-left: 0;
+    flex-grow: 1;
+    input {
+      padding-right: 10px;
+    }
+  }
+}

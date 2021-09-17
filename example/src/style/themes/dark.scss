@@ -1,0 +1,36 @@
+@import "./default.scss";
+
+$body-bg-color: #1d1d1d;
+$theme-bg-color: #27292d;
+$number-color: #d1d1d2;
+$border-color: #323336;
+$body-color: #d1d1d2;
+$active-conversation-bg: linear-gradient(
+  to right,
+  rgba(47, 50, 56, 0.54),
+  rgba(238, 242, 244, 0) 100%
+);
+$msg-hover-bg: rgba(47, 50, 56, 0.54);
+$chat-text-bg: #383b40;
+$chat-text-color: #b5b7ba;
+$msg-date: #626466;
+$msg-message: $msg-date;
+$overlay-bg: linear-gradient(
+  to bottom,
+  rgba(0, 0, 0, 0) 0%,
+  #27292d 65%,
+  #27292d 100%
+);
+$input-bg: #2f3236;
+$chat-header-bg: linear-gradient(
+  to bottom,
+  #27292d 0%,
+  #27292d 78%,
+  rgba(255, 255, 255, 0) 100%
+);
+$settings-icon-color: #7c7e80;
+$developer-color: $border-color;
+$button-bg-color: #393b40;
+$button-color: $body-color;
+$input-chat-color: #6f7073;
+$detail-font-color: $input-chat-color;
