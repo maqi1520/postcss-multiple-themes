@@ -38,8 +38,6 @@ jobs:
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
       - name: build example
-        run: cd example
-        run: npm i 
-        run: npm run build
+        run: cd example && npm install && npm run build
       - name: Run unit tests
         run: npx jest
