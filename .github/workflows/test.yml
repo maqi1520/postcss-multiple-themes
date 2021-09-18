@@ -17,8 +17,18 @@ jobs:
           node-version: 15
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
+      - name: install example
+        working-directory: example
+        run: npm  install
       - name: build example
-        run: cd example && npm  install && npm run build
+        working-directory: example
+        run: npm run build
+      - name: Deploy
+        working-directory: example
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.MGITHUB_TOKEN }}
+          publish_dir: ./dist
       - name: Run tests
         run: yarn test
   short:
@@ -40,6 +50,7 @@ jobs:
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
       - name: install example
-        run: cd example && npm install
+        working-directory: example
+        run: npm install
       - name: Run unit tests
         run: npx jest
