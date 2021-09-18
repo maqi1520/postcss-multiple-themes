@@ -10,7 +10,6 @@
     "postcss-multiple-themes"
   ],
   "scripts": {
-    "preinstall": "cd ./example && npm i && npm run build",
     "test": "jest --coverage && eslint .",
     "posttest": "cd ./example &&  npm run deploy",
     "semantic-release": "semantic-release"
