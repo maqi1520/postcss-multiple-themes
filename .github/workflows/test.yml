@@ -6,7 +6,7 @@ env:
   FORCE_COLOR: 2
 jobs:
   full:
-    name: Node.js 10 Full
+    name: Node.js 15 Full
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repository
@@ -14,9 +14,11 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 10
+          node-version: 15
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
+      - name: build example
+        run: cd example && npm  install && npm run build
       - name: Run tests
         run: yarn test
   short:
@@ -37,7 +39,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
-      - name: build example
-        run: cd example && npm install && npm run build
+      - name: install example
+        run: cd example && npm install
       - name: Run unit tests
         run: npx jest
