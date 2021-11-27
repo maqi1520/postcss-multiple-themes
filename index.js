@@ -12,9 +12,10 @@ module.exports = (opts = {}) => {
     opts.colorProps = ["color", "background", "border", "box-shadow", "stroke"];
   }
 
-  let theme;
 
   return (root) => {
+    let theme;
+
     const file = root.source.input.file || "";
 
     const matched = file.match(
